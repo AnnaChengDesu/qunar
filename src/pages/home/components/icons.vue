@@ -108,9 +108,10 @@ export default {
 
 .icons-wrapper {
     width:100%;
-    height:0;
-    padding-bottom:50%;
-    margin :.2rem 0 .5rem 0;
+    padding-top :2%;
+    padding-bottom:12%;
+    margin-bottom :.2rem;
+    background-color :#fff;
 }
 .icons-wrapper .icon-box{
     position:relative;
