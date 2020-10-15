@@ -8,10 +8,13 @@
             <div class="kw">搜索景点门票</div>
             <input type="text" class="header-input">
         </div>
-        <div class="header-right">
+        <router-link to="/city">
+            <div class="header-right">
             城市
-        <span class="iconfont">&#xe6aa;</span>
-        </div>
+            <span class="iconfont">&#xe6aa;</span>
+            </div>
+        </router-link>
+        
     </div>
 </template>
 
@@ -66,5 +69,6 @@ export default {
     height: 100%;
     line-height: .88rem;
     text-align: center;
+    color #fff;
 }
 </style> 
