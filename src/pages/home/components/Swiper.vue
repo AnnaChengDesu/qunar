@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="sw-wrapper">
         <swiper ref="mySwiper" :options="swiperOptions">
     
     <swiper-slide v-for="item in swiperList" :key="item.id">
@@ -47,16 +47,16 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-    .wrapper >>> .swiper-pagination-bullet-active{
+    .sw-wrapper >>> .swiper-pagination-bullet-active{
         background-color:rgba(255,255,255,.6);
     }
-    .wrapper{
+    .sw-wrapper{
         overflow:hidden;
         width:100%;
-        height:100%;
+        height:1.53rem;
         background:#eee;
     }
-    .wrapper .swiper-img{
+    .sw-wrapper .swiper-img{
         width:100%;
         height:100%;
     }
