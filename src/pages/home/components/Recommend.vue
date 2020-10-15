@@ -5,7 +5,7 @@
             猜你喜欢
         </div>
         <ul>
-            <router-link to='/detail' tag="li"   class="list-item" v-for="item in recommedList" :key="item.id">
+            <router-link to='/detail' tag="li"   class="list-item" v-for="item in recommendList" :key="item.id">
                 <div class="item-img">
                     <img  :src="item.imgUrl" alt="">
                 </div>
@@ -37,37 +37,38 @@
 
 export default {
     name:'HomeRecommend',
+    props:['recommendList'],
     data(){
         return{
-            recommedList:[
-                {
-                    id:'001',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-                    tag:'今日可订',
-                    title:'故宫',
-                    comentNum:'2132',
-                    price:'123',
-                    district:'东城区'
-                },
-                {
-                    id:'002',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/2005/30/307fa37039eab5cba3.water.jpg_200x200_39faf9c6.jpg',
-                    tag:'今日可订',
-                    title:'颐和园',
-                    comentNum:'2341',
-                    price:'34',
-                    district:'海淀区'
-                },
-                {
-                    id:'003',
-                    imgUrl:'https://imgs.qunarzz.com/sight/p0/2005/39/3979f1867defec4ea3.water.jpg_200x200_325a015d.jpg',
-                    tag:'随买随用',
-                    title:'八达岭长城',
-                    comentNum:'22312',
-                    price:'39.9',
-                    district:'延庆县'
-                }
-            ]
+            // recommedList:[
+            //     {
+            //         id:'001',
+            //         imgUrl:'https://imgs.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
+            //         tag:'今日可订',
+            //         title:'故宫',
+            //         comentNum:'2132',
+            //         price:'123',
+            //         district:'东城区'
+            //     },
+            //     {
+            //         id:'002',
+            //         imgUrl:'https://imgs.qunarzz.com/sight/p0/2005/30/307fa37039eab5cba3.water.jpg_200x200_39faf9c6.jpg',
+            //         tag:'今日可订',
+            //         title:'颐和园',
+            //         comentNum:'2341',
+            //         price:'34',
+            //         district:'海淀区'
+            //     },
+            //     {
+            //         id:'003',
+            //         imgUrl:'https://imgs.qunarzz.com/sight/p0/2005/39/3979f1867defec4ea3.water.jpg_200x200_325a015d.jpg',
+            //         tag:'随买随用',
+            //         title:'八达岭长城',
+            //         comentNum:'22312',
+            //         price:'39.9',
+            //         district:'延庆县'
+            //     }
+            // ]
         }
     }
 }

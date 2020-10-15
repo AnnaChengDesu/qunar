@@ -6,9 +6,9 @@
                 <swiper-slide v-for="(page,idx) in pages" :key="idx">
                     <div class="icon-box" v-for="item in page" :key="item.id">
                     <div class="icon-img-box" >
-                    <img class="icon-img" :src="item.iconUrl" alt="">
+                    <img class="icon-img" :src="item.imgUrl" alt="">
                     </div>
-                    <p class="icon-text">{{item.text}}</p>
+                    <p class="icon-text">{{item.description}}</p>
                     </div>
                 </swiper-slide>
 
@@ -23,70 +23,73 @@
 
 export default {
     name:'HomeIcons',
+    props:{
+        iconsList:Array
+    },
     data(){
         return{
             swiperOptions: {
                 pagination:'.swiper-pagination'
                 
             },
-            iconList:[
-                {
-                    id:'001',
-                    iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png',
-                    text:'景点门票'
-                },
-                {
-                    id:'002',
-                    iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/69e8b07cb2d438c5530aebd4c8e3abd3.png',
-                    text:'一日游'
-                },
-                {
-                    id:'003',
-                    iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/b526fe902327e59922374bf24927a87c.png',
-                    text:'颐和园'
-                },
-                {
-                    id:'004',
-                    iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/ba632a670497c3393a864595c5411ca1.png',
-                    text:'八达岭长城'
-                },
-                {
-                    id:'005',
-                    iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/5ffcd4a916f764f678263b27c1e2e00c.png',
-                    text:'天坛公园'
-                },
-                {
-                    id:'006',
-                    iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/d706a4d71c57c53ee8863b75a7af30cf.png',
-                    text:'圆明园'
-                },
-                {
-                    id:'007',
-                    iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/bd121884123cceb4da978047423421ce.png',
-                    text:'恭王府'
-                },
-                {
-                    id:'008',
-                    iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/aba25fb84648c130561afa5398d3552a.png',
-                    text:'北野动物园'
-                },
-                {
-                    id:'009',
-                    iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/1d15805633ee19ea51246ff7b0ee216d.png',
-                    text:'景山公园'
-                },
-                {
-                    id:'010',
-                    iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/aba25fb84648c130561afa5398d3552a.png',
-                    text:'北京动物园'
-                }
-            ]
+            // iconList:[
+            //     {
+            //         id:'001',
+            //         iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png',
+            //         text:'景点门票'
+            //     },
+            //     {
+            //         id:'002',
+            //         iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/69e8b07cb2d438c5530aebd4c8e3abd3.png',
+            //         text:'一日游'
+            //     },
+            //     {
+            //         id:'003',
+            //         iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/b526fe902327e59922374bf24927a87c.png',
+            //         text:'颐和园'
+            //     },
+            //     {
+            //         id:'004',
+            //         iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/ba632a670497c3393a864595c5411ca1.png',
+            //         text:'八达岭长城'
+            //     },
+            //     {
+            //         id:'005',
+            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/5ffcd4a916f764f678263b27c1e2e00c.png',
+            //         text:'天坛公园'
+            //     },
+            //     {
+            //         id:'006',
+            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/d706a4d71c57c53ee8863b75a7af30cf.png',
+            //         text:'圆明园'
+            //     },
+            //     {
+            //         id:'007',
+            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/bd121884123cceb4da978047423421ce.png',
+            //         text:'恭王府'
+            //     },
+            //     {
+            //         id:'008',
+            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/aba25fb84648c130561afa5398d3552a.png',
+            //         text:'北野动物园'
+            //     },
+            //     {
+            //         id:'009',
+            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/1d15805633ee19ea51246ff7b0ee216d.png',
+            //         text:'景山公园'
+            //     },
+            //     {
+            //         id:'010',
+            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/aba25fb84648c130561afa5398d3552a.png',
+            //         text:'北京动物园'
+            //     }
+            // ]
         }
     },
     computed:{
         pages:function(){
             var pages = [];
-            this.iconList.forEach(function(elem,idx){
+            this.iconsList.forEach(function(elem,idx){
                 var page = Math.floor(idx/8);
                 if(!pages[page]){
                     pages[page] = [];
