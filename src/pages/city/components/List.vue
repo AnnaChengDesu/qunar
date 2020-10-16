@@ -1,24 +1,12 @@
 <template>
-    <div class="list">
+    <div class="list" ref="listWrapper">
         <div>
-            <div class="hot-city">
-                <div class="hot-city-title">
+            <div class="hot-city" >
+                <div class="hot-city-title" >
                     热门城市
                 </div>
-                <ul class="clearfixed">
-                    <li class="border-top">北京</li>
-                    <li class="border-topleft">北京</li>
-                    <li class="border-topleft">北京</li>
-                    <li class="border-top">北京</li>
-                    <li class="border-topleft">北京</li>
-                    <li class="border-topleft">北京</li>
-                    <li class="border-top">北京</li>
-                    <li class="border-topleft">北京</li>
-                    <li class="border-topleft">北京</li>
-                    <li class="border-top">北京</li>
-                    <li class="border-topleft">北京</li>
-                    <li class="border-topleft">北京</li>
-                    
+                <ul class="clearfixed" >
+                    <li v-for="item in computedCities" :key="item.id" >{{item.name}}</li>
                 </ul>
             </div>
             <div class="alphabet-menu">
@@ -26,50 +14,16 @@
                     字母排序
                 </div>
                 <ul class="clearfixed">
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
-                    <li>A</li>
+                    <li v-for="(item,index) in letters" :key="index" @click="handleLetter">{{item}}</li>
+                    
                     
                 </ul>
             </div>
-            <div class="alphabet-list">
-                <div class="alphabet-list-title">A</div>
+            <div class="alphabet-list" v-for="(item,key) in cities" :key="key" :ref="key">
+                <div class="alphabet-list-title">{{key}}</div>
                 <ul class="clearfixed">
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
-                    <li>阿拉尔</li>
+                    <li v-for="innerItem in item" :key="innerItem.id">{{innerItem.name}}</li>
+                    
                 </ul>
             </div>
         </div>
@@ -77,9 +31,68 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 export default {
     name:'CityList',
+    props:{
+        hotCities:Array,
+        cities:Object
+    },
+    data:function(){
+        return{
+            letter:[]
+        }
+    }
+    ,
+    computed:{
+        letters:function(){
+            var letters = [];
+            for(var i in this.cities){
+                letters.push(i);
+            }
+            return letters
+        },
+        computedCities:function(){
+            var result = [],
+                length = this.hotCities.length,
+                item;
+            
+            for(var i = 0; i<length;i++){
+                var resObj = {};
+                item = this.hotCities[i];
+                resObj.name = item.name;
+                result.push(resObj);
 
+                if(item.order===1){
+                    resObj.borderType = "";
+                }else if(item.order === 2||item.order === 3){
+                    resObj.borderType = "border-left";
+                }else if(item.order % 3 === 1){
+                    resObj.borderType = 'border-top';
+                }else{
+                    resObj.borderType = 'bordet-topleft';
+                }
+            }
+            return result;
+        }
+    },
+    mounted:function(){
+        this.scroll = new BScroll(this.$refs.listWrapper,{
+            click:true
+        });
+        
+    },
+    methods:{
+        handleLetter:function(e){
+            this.letter = e.target.innerText;
+        }
+    },
+    watch:{
+        letter:function(){
+            var elem = this.$refs[this.letter][0];
+            this.scroll.scrollToElement(elem);
+        }
+    }
 }
 </script>
 
@@ -101,6 +114,7 @@ div{
     left :0;
     right :0;
     bottom :0;
+    overflow :hidden;
 }
 
 .hot-city{
@@ -137,11 +151,11 @@ div{
     height :.9rem;
     line-height :.9rem;
     text-align :center;
-    background :lightBlue;
+    
 }
 
 .alphabet-menu ul{
-    height :4.2rem;
+    
     margin :.3rem 0;
 }
 
