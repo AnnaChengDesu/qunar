@@ -5,7 +5,11 @@
             猜你喜欢
         </div>
         <ul>
-            <router-link to='/detail' tag="li"   class="list-item" v-for="item in recommendList" :key="item.id">
+            <router-link v-for="item in recommendList" 
+                         :to="'/detail/' +item.id" 
+                         tag="li"   
+                         class="list-item" 
+                         :key="item.id">
                 <div class="item-img">
                     <img  :src="item.imgUrl" alt="">
                 </div>
