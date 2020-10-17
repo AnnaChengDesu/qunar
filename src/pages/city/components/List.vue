@@ -6,7 +6,9 @@
                     热门城市
                 </div>
                 <ul class="clearfixed" >
-                    <li v-for="item in computedCities" :key="item.id" >{{item.name}}</li>
+                    <li v-for="item in computedCities" 
+                    :key="item.id" 
+                    :class="item.borderType" @click="handleCityClick(item.name)">{{item.name}}</li>
                 </ul>
             </div>
             <div class="alphabet-menu">
@@ -22,7 +24,8 @@
             <div class="alphabet-list" v-for="(item,key) in cities" :key="key" :ref="key">
                 <div class="alphabet-list-title">{{key}}</div>
                 <ul class="clearfixed">
-                    <li v-for="innerItem in item" :key="innerItem.id">{{innerItem.name}}</li>
+                    <li v-for="innerItem in item" :key="innerItem.id"
+                    @click="handleCityClick(innerItem.name)">{{innerItem.name}}</li>
                     
                 </ul>
             </div>
@@ -85,6 +88,11 @@ export default {
     methods:{
         handleLetter:function(e){
             this.letter = e.target.innerText;
+        },
+        handleCityClick:function(city){
+            this.$store.dispatch('changeCityName',city);
+            this.$router.push('/');
+            
         }
     },
     watch:{
