@@ -78,6 +78,7 @@ export default {
     color :#fff;
     text-align :center;
     background-color :$bgColor;
+    z-index :2;
 }
 .header-left {
     position :absolute;
