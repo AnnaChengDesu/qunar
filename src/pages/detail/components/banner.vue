@@ -2,16 +2,17 @@
     
         <div>
             <div class="banner">
-            <img class="banner-img" @click="handleGallery" src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg" alt="">
+            <img class="banner-img" @click="handleGallery" :src="bannerImage" alt="">
             <div class="banner-info">
                 <div class="banner-number">
                     <span class="iconfont banner-icon">&#xe60b;</span>
-                    8</div>
-                <div class="banner-title">故宫（AAA景区）</div>
+                    <span>{{this.galleryImages.length}}</span>
+                    </div>
+                <div class="banner-title">{{this.sightName}}</div>
             </div>
             
         </div>
-        <common-gallery :imgsList="imgsList" 
+        <common-gallery :imgsList="galleryImages" 
                         v-show="isShow" 
                         :closeGallery="handleGallery"></common-gallery>
         </div>
@@ -21,14 +22,18 @@
 import CommonGallery from 'common/gallery/Gallery'
 export default {
     name:'DetailBanner',
+    props:{
+        sightName:String,
+        bannerImage:String,
+        galleryImages:Array
+    },
     components:{
         'common-gallery':CommonGallery
     },
     data:function(){
         return {
             isShow:false,
-            imgsList:['//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg',
-            '//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg']
+            
         }
     },
     methods:{

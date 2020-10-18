@@ -39,12 +39,10 @@ export default {
             }
         }
     },
-    activated:function(){
+    mounted:function(){
         window.addEventListener('scroll',this.handleScroll)
     },
-    deactivated:function(){
-        window.removeEventListener('scroll',this.handleScroll)
-    }
+    
 }
 </script>
 
