@@ -2,7 +2,7 @@
     <div>
         <detail-banner :sightName='sightName' :bannerImage="bannerImage" :galleryImages="galleryImages"></detail-banner>
         <detail-header></detail-header>
-        <detail-list :categoryList="categoryList"></detail-list>
+        <detail-list :list="categoryList"></detail-list>
         <div class="content-box"></div>
     </div>
 </template>
