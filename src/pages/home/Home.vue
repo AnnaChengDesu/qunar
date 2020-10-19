@@ -36,6 +36,7 @@ export default {
     methods:{
         getHomeInfo:function(){
             axios.get('/api/index.json')
+            // axios.get('/qunar_dist/static/mock/index.json')
             .then(this.getHomeInfoSuccess)
         },
         getHomeInfoSuccess:function(res){

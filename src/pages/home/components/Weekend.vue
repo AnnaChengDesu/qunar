@@ -4,7 +4,7 @@
             周末去哪儿
         </div>
         <ul>
-            <router-link to='/detail' tag="li"   class="list-item" v-for="item in weekendList" :key="item.id">
+            <router-link to='/UnderDevelopment' tag="li"   class="list-item" v-for="item in weekendList" :key="item.id">
                 <div class="item-img">
                     <img  :src="item.imgUrl" alt="">
                 </div>

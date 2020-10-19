@@ -1,25 +1,29 @@
 {
   "ret": true,
+  
   "data": {
-    "sightName": "峨眉山(AAAAA景区)",
-    "bannerImage": "//img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_600x330_38a5c69c.jpg",
-    "galleryImages": ["http://img1.qunarzz.com/sight/p0/1712/16/16dd785ae3e2447ba3.img.jpg_r_800x800_dd060a69.jpg", "http://img1.qunarzz.com/sight/p0/1412/8c/00acc470780a5d986d8de5c0ceb5b701.water.jpg_r_800x800_7da3e204.jpg"],
+    "sightName": "成都欢乐谷(AAAA景区)",
+    "bannerImage": "//img1.qunarzz.com/sight/p0/1509/b6/c07f03a93858de47ebe10d916b4afb4b.water.jpg_600x330_acf51b82.jpg",
+    "galleryImages": ["http://img1.qunarzz.com/sight/p0/1509/b6/c07f03a93858de47ebe10d916b4afb4b.water.jpg_350x240_29e8318e.jpg", "http://img1.qunarzz.com/sight/p0/1509/c9/212294bb9356312f91492b31ab1bab3a.water.jpg_350x240_b93607d7.jpg","http://img1.qunarzz.com/sight/p0/1509/79/4617b478f24f03b7b2ad5e73fbd06740.water.jpg_350x240_a0176ff6.jpg","http://img1.qunarzz.com/sight/p0/1509/a3/ec9af77f7e6d343d34253bc0b97e7db5.water.jpg_350x240_dc46a6c4.jpg","http://img1.qunarzz.com/sight/p0/1509/1d/e74e796e4e21275427ffdd838619f45f.water.jpg_350x240_5c5a3213.jpg"],
     "categoryList": [{
-        "title": "金顶索道",
-        "children": [{
-          "title": "峨眉山金顶索道票（下行）",
-          "children": [{
-            "title": "乘坐线路：起于金顶，止于接引殿"
-          }]
+        "title": "去哪儿推荐",
+        "isShow":true,
+        "ticket": [{
+          "title": "【仅可预订6日内票】成都欢乐谷全日门票成人票（当日订）",
+          "orderTime":"可订明日",
+          "right":"随时退",
+          "price":"220"
         },{
-          "title": "峨眉山金顶索道票（上行）"
+          "title": "成都欢乐谷日场门票-（提前订享优惠）",
+          "orderTime":"23:30前可订明日",
+          "right":"条件退",
+          "price":"215"
+        },{
+          "title": "成都欢乐谷日场门票-（提前订享优惠）",
+          "orderTime":"23:30前可订明日",
+          "right":"条件退",
+          "price":"215"
         }]
-      }, {
-        "title": "万年寺索道"
-      }, {
-        "title": "观光车"
-      }, {
-        "title": "景区直通车"
       }]
   }
 }

@@ -1,9 +1,8 @@
 <template>
     <div>
         <detail-banner :sightName='sightName' :bannerImage="bannerImage" :galleryImages="galleryImages"></detail-banner>
-        <detail-header></detail-header>
+        <detail-header :sightName='sightName'></detail-header>
         <detail-list :list="categoryList"></detail-list>
-        <div class="content-box"></div>
     </div>
 </template>
 
@@ -31,7 +30,8 @@ export default {
         getDetailInfo:function(){
             //axios发送请求带参数两种方式
             // axios.get('/api/detail.json?id=' +this.$route.params.id)
-            axios.get('/api/detail.json',{
+            // axios.get('/qunar_dist/static/mock/detail.json',{
+                 axios.get('/api/detail.json',{
                  params:{
                      id:this.$route.params.id
                  }
@@ -56,7 +56,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.content-box{
-    height :50rem;
-}
+
 </style>

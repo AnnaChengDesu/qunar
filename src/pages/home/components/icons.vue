@@ -4,12 +4,17 @@
             <swiper ref="mySwiper" :options="swiperOptions">
                 
                 <swiper-slide v-for="(page,idx) in pages" :key="idx">
-                    <div class="icon-box" v-for="item in page" :key="item.id">
-                    <div class="icon-img-box" >
-                    <img class="icon-img" :src="item.imgUrl" alt="">
-                    </div>
-                    <p class="icon-text">{{item.description}}</p>
-                    </div>
+                    <router-link tag="div" 
+                                class="icon-box" 
+                                v-for="item in page" 
+                                :key="item.id"
+                                :to="'/detail/' +item.id">
+                        <div class="icon-img-box" >
+                        <img class="icon-img" :src="item.imgUrl" alt="">
+                        </div>
+                        <p class="icon-text">{{item.description}}</p>
+                    </router-link>
+                    
                 </swiper-slide>
 
                 <div class="swiper-pagination" slot="pagination"></div>
@@ -32,58 +37,7 @@ export default {
                 pagination:'.swiper-pagination'
                 
             },
-            // iconList:[
-            //     {
-            //         id:'001',
-            //         iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/158387fe5376294f3776d01358d6b73b.png',
-            //         text:'景点门票'
-            //     },
-            //     {
-            //         id:'002',
-            //         iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/69e8b07cb2d438c5530aebd4c8e3abd3.png',
-            //         text:'一日游'
-            //     },
-            //     {
-            //         id:'003',
-            //         iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/b526fe902327e59922374bf24927a87c.png',
-            //         text:'颐和园'
-            //     },
-            //     {
-            //         id:'004',
-            //         iconUrl:'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/ba632a670497c3393a864595c5411ca1.png',
-            //         text:'八达岭长城'
-            //     },
-            //     {
-            //         id:'005',
-            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/5ffcd4a916f764f678263b27c1e2e00c.png',
-            //         text:'天坛公园'
-            //     },
-            //     {
-            //         id:'006',
-            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/d706a4d71c57c53ee8863b75a7af30cf.png',
-            //         text:'圆明园'
-            //     },
-            //     {
-            //         id:'007',
-            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/bd121884123cceb4da978047423421ce.png',
-            //         text:'恭王府'
-            //     },
-            //     {
-            //         id:'008',
-            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/aba25fb84648c130561afa5398d3552a.png',
-            //         text:'北野动物园'
-            //     },
-            //     {
-            //         id:'009',
-            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/1d15805633ee19ea51246ff7b0ee216d.png',
-            //         text:'景山公园'
-            //     },
-            //     {
-            //         id:'010',
-            //         iconUrl:'https://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20209/aba25fb84648c130561afa5398d3552a.png',
-            //         text:'北京动物园'
-            //     }
-            // ]
+            
         }
     },
     computed:{
@@ -126,15 +80,15 @@ export default {
 }
 .icons-wrapper .icon-img-box{
     position :absolute;
-    top:0;
+   
     left :0;
     right:0;
-    bottom :.44rem;
+    bottom :.52rem;
     
 }
 .icons-wrapper .icon-box .icon-text{
     position :absolute;
-    bottom :0;
+    bottom :.1rem;
     left :0;
     right :0;
     height :.44rem;
@@ -145,7 +99,7 @@ export default {
 }
 .icons-wrapper .icon-img-box img{
     display :block;
-    height :100%;
+    height :1.1rem;
     margin : 0 auto;
 }
 .wrapper{

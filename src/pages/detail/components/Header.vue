@@ -7,7 +7,7 @@
             <router-link  to="/" class="header-left">  
              <span class="iconfont header-left-back">&#xe624;</span>
             </router-link>
-            故宫
+            {{this.sightName}}
         </div>
     </div>
 </template>
@@ -16,6 +16,7 @@
 
 export default {
     name:'DetailHeader',
+    props:{sightName:String},
     data:function(){
         return{
             showHeaderBack:true,

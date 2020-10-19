@@ -15,7 +15,7 @@
         <common-fade>
             <common-gallery :imgsList="galleryImages" 
                             v-show="isShow" 
-                            :closeGallery="handleGallery">
+                            @closeGallery="handleGallery">
             </common-gallery>
 
         </common-fade>
@@ -62,8 +62,10 @@ export default {
     
 }
 .banner-img{
+    display :block;
     width :100%;
 }
+
 
 .banner .banner-info{
     position :absolute;

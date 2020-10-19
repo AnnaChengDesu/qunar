@@ -62,7 +62,7 @@ export default {
     .sw-wrapper{
         overflow:hidden;
         width:100%;
-        height:1.53rem;
+        height:100%;
         background:#eee;
     }
     .sw-wrapper .swiper-img{

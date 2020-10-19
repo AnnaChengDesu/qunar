@@ -26,6 +26,7 @@ export default {
     },
     methods:{
         getCityInfo:function(){
+            // axios.get('/qunar_dist/static/mock/city.json')
             axios.get('/api/city.json')
             .then(this.getCityInfoSuccess)
         },
