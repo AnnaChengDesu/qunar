@@ -6,7 +6,6 @@
         <home-recommend :recommend-list="recommendList"></home-recommend>
         <home-weekend :weekend-list="weekendList"></home-weekend>
     </div>
-    
 </template>
 
 <script>

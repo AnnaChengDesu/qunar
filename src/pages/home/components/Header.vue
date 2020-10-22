@@ -66,6 +66,7 @@ export default {
     height: 100%;
     width: 100%;
     border-radius: .05rem;
+    text-indent :.15rem;
 }
 
 .header .header-right{

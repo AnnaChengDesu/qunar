@@ -3,6 +3,7 @@
         <detail-banner :sightName='sightName' :bannerImage="bannerImage" :galleryImages="galleryImages"></detail-banner>
         <detail-header :sightName='sightName'></detail-header>
         <detail-list :list="categoryList"></detail-list>
+        <div class="detail-content"></div>
     </div>
 </template>
 
@@ -29,7 +30,7 @@ export default {
     methods:{
         getDetailInfo:function(){
             //axios发送请求带参数两种方式
-            // axios.get('/api/detail.json?id=' +this.$route.params.id)
+            axios.get('/api/detail.json?id=' +this.$route.params.id)
             // axios.get('/qunar_dist/static/mock/detail.json',{
                  axios.get('/api/detail.json',{
                  params:{
@@ -56,5 +57,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+.detail-content {
+    height :1rem
+}
 </style>
